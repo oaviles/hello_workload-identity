@@ -1,0 +1,24 @@
+name: 2 Get OIDC URI (CLI)
+
+on:
+  workflow_dispatch:
+  
+env:
+  AZURE_REGION: eastus
+  AZURE_RG: oa-aks-rg
+  AKS_CLUSTER_NAME: spAKSCluster
+
+jobs:
+  get-oidc:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Get OIDC
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az aks show -n ${{ env.AKS_CLUSTER_NAME }} -g ${{ env.AZURE_RG }} --query "oidcIssuerProfile.issuerUrl" -otsv
