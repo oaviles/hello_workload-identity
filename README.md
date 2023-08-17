@@ -60,8 +60,8 @@ EOF
 
 #### More Resources
 - [Use Azure AD workload identity with Azure Kubernetes Service](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview)
-- [Source Reference](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens
-)
+- [OpenID Connect Tokens](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens)
+- [Federated Identity pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/federated-identity)
 
 ### Check More DevSquad Projects
 * [DevSquad Main Project](https://github.com/microsoft/devsquad-accelerators)
